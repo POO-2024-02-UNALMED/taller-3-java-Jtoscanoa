@@ -2,96 +2,84 @@ package taller3.televisores;
 
 public class TV {
     private Marca marca;
-    private int canal = 1;
-    private int precio = 500;
-    private int volumen = 1;
+    private int canal;
+    private int precio;
+    private int volumen;
     private int serial;
-    private int numTV = 0;
+    private static int numTV = 0; // Make numTV static
     private boolean estado;
     private Control control;
-    public TV(Marca marca, boolean estado){
+
+    public TV(Marca marca, boolean estado) {
         this.marca = marca;
         this.estado = estado;
-        this.serial = numTV;
-        numTV++;
+        this.canal = 1; // Default channel
+        this.volumen = 1; // Default volume
+        this.precio = 500; // Default price
+        this.serial = numTV; // Assign serial number
+        numTV++; // Increment static counter
     }
-    public Marca getMarca(){
+
+    public Marca getMarca() {
         return marca;
     }
-    public void setCanal(int canal){
-        this.canal = canal;
+
+    public void setCanal(int canal) {
+        if (this.estado && canal >= 1 && canal <= 120) {
+            this.canal = canal;
+        }
     }
-    public int getCanal(){
+
+    public int getCanal() {
         return canal;
     }
-    public void setPrecio(int precio){
+
+    public void setPrecio(int precio) {
         this.precio = precio;
     }
-    public int getPrecio(){
+
+    public int getPrecio() {
         return precio;
     }
-    public void setVolumen(int volumen){
-        this.volumen = volumen;
+
+    public void setVolumen(int volumen) {
+        if (this.estado && volumen >= 0 && volumen <= 7) {
+            this.volumen = volumen;
+        }
     }
-    public int getVolumen(){
+
+    public int getVolumen() {
         return volumen;
     }
-    public void setEstado(boolean estado){
+
+    public void setEstado(boolean estado) {
         this.estado = estado;
     }
-    public boolean getEstado(){
+
+    public boolean getEstado() {
         return estado;
     }
-    public void setControl(Control control){
+
+    public void setControl(Control control) {
         this.control = control;
     }
-    public Control getControl(){
+
+    public Control getControl() {
         return control;
     }
-    public void setSerial(int serial){
-        this.serial = serial;
-    }
-    public int getSerial(){
+
+    public int getSerial() {
         return serial;
     }
-    public void setNumTV(int numTV){
-        this.numTV = numTV;
-    }
-    public int getNumTV(){
+
+    public static int getNumTV() {
         return numTV;
     }
-    public void turnOn(){
+
+    public void turnOn() {
         this.estado = true;
     }
-    public void turnOff(){
+
+    public void turnOff() {
         this.estado = false;
     }
-    public void canalUp(){
-        if (this.estado = true){
-            if (this.canal>1 && 120>this.canal){
-                this.canal++;
-            }
-        }
-    }
-    public void canalDown(){
-        if (this.estado = true){
-            if (this.canal>1 && 120>this.canal){
-                this.canal--;
-            }
-        }
-    }
-    public void volumenUp(){
-        if (this.estado = true){
-            if (this.volumen>0 && 7>this.volumen){
-                volumen++;
-            }
-        }
-    }
-    public void volumenDown(){
-        if (this.estado = true){
-            if (this.volumen>0 && 7>this.volumen){
-                volumen--;
-            }
-        }
-    }
-}
