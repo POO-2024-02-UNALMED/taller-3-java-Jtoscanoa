@@ -9,6 +9,9 @@ public class TV {
     int numTV = 0;
     boolean estado;
     Control control;
+    public Marca getMarca(){
+        return marca;
+    }
     public TV(Marca marca, boolean estado){
         this.marca = marca;
         this.estado = estado;
