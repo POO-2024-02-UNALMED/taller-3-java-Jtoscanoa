@@ -2,10 +2,6 @@ package taller3.televisores;
 
 public class Control {
     TV tv;
-    public Control(TV tv) {
-        this.tv = tv;
-        tv.setControl(this);
-    }
     public TV getTv() {
         return tv;
     }
