@@ -1,7 +1,7 @@
 package taller3.televisores;
 
 public class Control {
-    private private TV tv;
+    private TV tv;
     public Control(TV tv) {
         this.tv = tv;
         tv.setControl(this);
