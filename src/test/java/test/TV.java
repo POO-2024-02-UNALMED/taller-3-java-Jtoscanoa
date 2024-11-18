@@ -1,21 +1,25 @@
 package test;
 
+import taller3.televisores.Control;
 import taller3.televisores.Marca;
 
 public class TV {
-    Marca marca;
+    taller3.televisores.Marca marca;
     int canal = 1;
     int precio = 500;
     int volumen = 1;
     int serial;
     int numTV = 0;
     boolean estado;
-    Control control;
-    public TV(Marca marca, boolean estado){
+    taller3.televisores.Control control;
+    public TV(taller3.televisores.Marca marca, boolean estado){
         this.marca = marca;
         this.estado = estado;
         this.serial = numTV;
         numTV++;
+    }
+    public Marca getMarca(){
+        return marca;
     }
     public void setCanal(int canal){
         this.canal = canal;
@@ -41,7 +45,7 @@ public class TV {
     public boolean getEstado(){
         return estado;
     }
-    public void setControl(Control control){
+    public void setControl(taller3.televisores.Control control){
         this.control = control;
     }
     public Control getControl(){

@@ -1,15 +1,17 @@
 package test;
 
+import taller3.televisores.TV;
+
 public class Control {
-    private TV tv;
-    public Control(TV tv) {
-        this.tv = tv;
-        tv.setControl(this);
-    }
-    public TV getTv() {
+    private taller3.televisores.TV tv;
+//    public Control(TV tv) {
+//        this.tv = tv;
+//        tv.setControl(this);
+//    }
+    public taller3.televisores.TV getTv() {
         return tv;
     }
-    public void setTv(TV tv) {
+    public void setTv(taller3.televisores.TV tv) {
         this.tv = tv;
         tv.setControl(this);
     }
